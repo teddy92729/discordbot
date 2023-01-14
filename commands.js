@@ -4,7 +4,7 @@ module.exports=[
       description: "Replies with Pong!",
       func:function(client,interaction){
           return new Promise(async(r)=>{
-            await interaction.reply("FUCK");
+            await interaction.reply("Pong");
             r();
           });
       }
