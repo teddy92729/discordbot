@@ -1,6 +1,6 @@
 const { REST, Routes } = require('discord.js');
 const {TOKEN,CLIENT_ID}=require("./bot.json");
-
+process.env.DEPLOY=true;
 const commands= require("./commands.js");
 console.log(commands);
 

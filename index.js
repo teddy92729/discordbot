@@ -9,21 +9,17 @@ client.on('ready', () => {
 });
 
 client.on('interactionCreate', async interaction => {
-  if (!interaction.isChatInputCommand()) return;
-  let command=undefined;
-  try{
+    if (!interaction.isChatInputCommand()) return;
+    let command=undefined;
     commands.forEach((c)=>{
       if(c.name===interaction.commandName){
         command=c;
       }
     });
-    
+    console.log(interaction.user.username," use command ",interaction.commandName);
     if(command){
       await command.func(client,interaction);
-    }    
-  }catch(err){
-    console.log(err);
-  }
+    }
 });
 
 

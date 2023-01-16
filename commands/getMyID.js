@@ -1,4 +1,3 @@
-
 function main(client,interaction){
     return new Promise(async(r)=>{
       await interaction.reply(`Your Discord ID is ${interaction.user.id}`);
