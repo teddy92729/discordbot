@@ -8,7 +8,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('interactionCreate', async interaction => {
+client.on('interactionCreate',(interaction)=>(async () => {
     if (!interaction.isChatInputCommand()) return;
     let command=undefined;
     commands.forEach((c)=>{
@@ -20,7 +20,6 @@ client.on('interactionCreate', async interaction => {
     if(command){
       await command.func(client,interaction);
     }
-});
-
+})().catch(e=>console.log));
 
 client.login(TOKEN);

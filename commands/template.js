@@ -1,17 +1,13 @@
-const EventEmitter = require('events');
 const { SlashCommandBuilder } = require('discord.js');
 
 
 function main(client,interaction){
-    const eventEmitter = new EventEmitter({ captureRejections: true });
-    const __func=async(resolve)=>{
+    return (async()=>{
       console.log("...........");
       await interaction.reply("Hello World");
-      resolve();
-    };
-    eventEmitter.on("interaction",__func);
-    eventEmitter.on("error",(e)=>console.error("Error caught:",e.message));
-    return new Promise((r)=>eventEmitter.emit("interaction",r));
+    })().catch(e=>{
+
+    });
 }
 
 module.exports=new SlashCommandBuilder()
